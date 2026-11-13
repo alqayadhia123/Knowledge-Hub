@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 
 type Language = "ar" | "en";
@@ -81,10 +82,10 @@ export default function HomePage() {
   return (
     <main className="app-shell" data-theme={theme} dir={isAr ? "rtl" : "ltr"} lang={lang}>
       <aside className="sidebar">
-        <a className="brand" href="/" aria-label="Knowledge Hub home">
+        <Link className="brand" href="/" aria-label="Knowledge Hub home">
           <span className="brand-mark">K<span>H</span></span>
           <span className="brand-copy"><strong>Knowledge Hub</strong><small>AI RESEARCH WORKSPACE</small></span>
-        </a>
+        </Link>
         <div className="side-label">{t.sections}</div>
         <nav className="nav-list" aria-label={t.sections}>
           {nav.map(item => <button key={item.key} className={`nav-item ${active === item.key ? "active" : ""}`} onClick={() => setActive(item.key)}>
