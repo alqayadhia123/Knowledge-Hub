@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AdminPage() {
   return (
     <main className="admin-gate" dir="rtl">
@@ -7,7 +9,7 @@ export default function AdminPage() {
         <h1>منطقة الإدارة</h1>
         <p>هذه مساحة الإدارة المنفصلة. لم يتم تفعيل المصادقة بعد؛ لذلك لا توجد وظائف إدارية أو بيانات محمية متاحة في هذا النموذج الأولي.</p>
         <div className="notice">يلزم إعداد مزود هوية، والتحقق من الجلسة على الخادم، وتطبيق صلاحيات الوصول وRLS قبل فتح هذه المنطقة.</div>
-        <a className="back-link" href="/">العودة إلى مساحة العمل ←</a>
+        <Link className="back-link" href="/">العودة إلى مساحة العمل ←</Link>
       </div>
     </main>
   );
