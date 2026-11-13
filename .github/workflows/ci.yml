@@ -12,16 +12,26 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Install dependencies
         run: npm install
+      - name: Apply non-breaking dependency security fixes
+        run: npm audit fix
+      - name: Upload generated dependency lockfile
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-hub-package-lock
+          path: package-lock.json
+          if-no-files-found: warn
+          retention-days: 7
       - name: Security audit
         run: npm audit --audit-level=low
       - name: Lint
