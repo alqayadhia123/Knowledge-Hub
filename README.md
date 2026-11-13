@@ -62,6 +62,10 @@ No service has been provisioned and no deployment has been performed by this sca
 
 See [SECURITY.md](SECURITY.md), [data classification](docs/DATA_CLASSIFICATION.md), [architecture](docs/ARCHITECTURE.md), and [Agent Reality ChatGPT](docs/AGENT_REALITY_CHATGPT.md).
 
+## Local development
+
+See [docs/LOCAL_DEVELOPMENT.md](docs/LOCAL_DEVELOPMENT.md) for Node.js requirements and commands to run the prototype locally.
+
 ## Repository status
 
 - [x] Repository verified and write access confirmed
