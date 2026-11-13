@@ -22,6 +22,8 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Security audit
+        run: npm audit --audit-level=low
       - name: Lint
         run: npm run lint
       - name: Build
