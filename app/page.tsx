@@ -94,7 +94,7 @@ export default function HomePage() {
         </nav>
         <div className="sidebar-bottom">
           <div className="security-card"><span className="security-icon">◇</span><div><strong>{isAr ? "المعرفة أولاً" : "Knowledge first"}</strong><small>{isAr ? "مصادر موثوقة وصلاحيات واضحة" : "Trusted sources. Clear access."}</small></div></div>
-          <a className="admin-link" href="/admin"><span>⚙</span>{t.admin}<span className="external">↗</span></a>
+          <Link className="admin-link" href="/admin"><span>⚙</span>{t.admin}<span className="external">↗</span></Link>
           <div className="profile"><div className="avatar">AA</div><div className="profile-text"><strong>Abdulbari Alqayadh</strong><small>Workspace owner</small></div><span className="more">···</span></div>
         </div>
       </aside>
