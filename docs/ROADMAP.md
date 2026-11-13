@@ -3,8 +3,8 @@
 ## Phase 0 — Repository and product baseline
 - [x] Verify repository and write permission
 - [x] Add public-safe project documentation
-- [ ] Confirm repository is Private before non-public content
-- [ ] Finalize product brief and visual direction
+- [x] Finalize product brief and visual direction (AI Research Hub)
+- [ ] Confirm repository visibility is Private before adding non-public content
 
 ## Phase 1 — Foundation
 - [ ] Select framework versions and package manager
@@ -19,18 +19,22 @@
 - [ ] Add RLS policies and positive/negative authorization tests
 - [ ] Protect Admin routes and API operations
 
-## Phase 3 — Core workspace
-- [ ] Responsive navigation and dashboard
+## Phase 3 — Core workspace and agent experience
+- [ ] Responsive bilingual application shell and dashboard
 - [ ] Projects and milestones
 - [ ] Courses, workshops, lessons, and learning records
 - [ ] Research sources, citations, and verification states
 - [ ] Tools and resource catalogue
+- [ ] Agent Reality ChatGPT conversation interface and user-scoped history
+- [ ] Separate protected Agent Admin settings and controls
 
-## Phase 4 — Knowledge management
+## Phase 4 — Knowledge management and agent runtime
 - [ ] Private document storage
 - [ ] Classification and metadata
 - [ ] Search and filtering
-- [ ] Controlled ingestion pipeline
+- [ ] Authorization-aware retrieval and classification filtering
+- [ ] Server-side agent orchestrator and mock provider
+- [ ] Select and review a model provider before real integration
 - [ ] Optional vector retrieval after model selection and security review
 
 ## Phase 5 — Admin and operations
