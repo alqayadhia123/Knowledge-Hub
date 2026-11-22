@@ -118,9 +118,25 @@ if st.session_state.get("amp_descriptors"):
             except RuntimeError as exc:
                 st.session_state["amp_ai_error"] = str(exc)
             except Exception as exc:
+                status_code = getattr(exc, "status_code", None)
+                diagnostic = (
+                    f"HTTP {status_code}" if status_code is not None else "دون رمز HTTP"
+                )
+                if status_code == 401:
+                    guidance = (
+                        "رفضت Cent AI مفتاح API. تحقق من المفتاح النشط ونوعه "
+                        "ومن عدم وجود متغير بيئة قديم."
+                    )
+                elif status_code == 403:
+                    guidance = (
+                        "رفضت Cent AI صلاحية الطلب. تحقق من صلاحيات المفتاح "
+                        "وإتاحة النموذج للحساب."
+                    )
+                else:
+                    guidance = "راجع إعدادات Secrets وسجل الخدمة."
                 st.session_state["amp_ai_error"] = (
-                    "تعذر الاتصال بخدمة Cent AI. "
-                    f"نوع الخطأ: {type(exc).__name__}. راجع إعدادات Secrets وسجل الخدمة."
+                    f"تعذر الاتصال بخدمة Cent AI. نوع الخطأ: {type(exc).__name__} "
+                    f"({diagnostic}). {guidance}"
                 )
 
     if st.session_state.get("amp_ai_error"):
