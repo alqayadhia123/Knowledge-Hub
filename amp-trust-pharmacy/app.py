@@ -14,7 +14,7 @@ def normalize_sequence(raw: str) -> str:
         for line in raw.splitlines()
         if line.strip() and not line.lstrip().startswith(">")
     ]
-    return re.sub(r"\\s+", "", "".join(lines)).upper()
+    return re.sub(r"\s+", "", "".join(lines)).upper()
 
 
 def validate_sequence(sequence: str) -> tuple[bool, str]:
