@@ -47,7 +47,7 @@ def explain_descriptors(descriptors: dict[str, float]) -> str:
         timeout=30,
         max_retries=0,
     )
-    descriptor_text = "\\n".join(
+    descriptor_text = "\n".join(
         f"{name}: {value}" for name, value in descriptors.items()
     )
     response = client.chat.completions.create(
@@ -57,7 +57,7 @@ def explain_descriptors(descriptors: dict[str, float]) -> str:
             {
                 "role": "user",
                 "content": (
-                    "قدّم تفسيراً وصفياً موجزاً لهذه الواصفات فقط، واذكر حدودها العلمية:\\n"
+                    "قدّم تفسيراً وصفياً موجزاً لهذه الواصفات فقط، واذكر حدودها العلمية:\n"
                     f"{descriptor_text}"
                 ),
             },
